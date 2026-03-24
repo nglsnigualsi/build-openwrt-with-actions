@@ -137,7 +137,7 @@ jobs:
       - name: 单线程编译 openWRT (Build openWRT single thread)
         if: ${{inputs.multithreading == false}}
         working-directory: openWRT
-        run: make -j1 V=s
+        run: make package/kernel/compile V=s
 
       - name: 上传编译结果到 Artifact (Upload build result to Artifact)
         uses: actions/upload-artifact@v4
